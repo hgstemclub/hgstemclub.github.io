@@ -6,3 +6,4 @@ $blood = $_GET["blood"];
 $opinion = $_GET["opinion"];
 
 include "conf.html";
+?>
