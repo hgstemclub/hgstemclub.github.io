@@ -13,7 +13,7 @@ scroll
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>Flappy Bird</title>
+    <title>Flappy Money</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <style>
     canvas{
@@ -179,7 +179,7 @@ scroll
             //ゲームオーバーのパターン
             if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
 
-            alert("うわっ、当たっちゃった");
+            alert("脱税失敗、、でも"+ score +"年間は脱税成功したよ" );
             //return false;
             //ctx.fillStyle = "red"; //カラー
             //ctx.fillText("ゲームオーバー  3秒後リスタート", cvs.width/2, cvs.height/2); //表示内容、位置            
