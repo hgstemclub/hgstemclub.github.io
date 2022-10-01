@@ -13,7 +13,7 @@ scroll
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>Flappy Money</title>
+    <title>Flappy Bird</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <style>
     canvas{
@@ -188,16 +188,16 @@ scroll
             //ゲームオーバーのパターン
             if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
 
-            alert("うわっ、脱税できなかった、、スコアは"+ score +);
+            alert("うわっ、当たっちゃった");
             //return false;
-            setTimeout(reload, 3000);
+            
             location.reload();
             }
             if(pipe[i].x == bX){
                 score++;
             }
         }
-        bY += 1.5;
+        bY += 1.7;
         
         ctx.fillStyle = "#000"; //カラー
         ctx.font-size="large"
