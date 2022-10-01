@@ -160,7 +160,7 @@ scroll
             constant = pipeNorth.height+gap;
             ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
             ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
-            pipe[i].x--;
+            pipe[i].x-=2;
             
             if( pipe[i].x == 1200 ){  //ドカン左端位置が200進んだら（200 = canvas幅:500 - ドカン左端pipe[i].x 300）
                 pipe.push({
@@ -179,11 +179,12 @@ scroll
             //ゲームオーバーのパターン
             if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
 
-            //alert("うわっ、当たっちゃった");
+            alert("うわっ、当たっちゃった");
             //return false;
-            ctx.fillStyle = "red"; //カラー
-            ctx.fillText("ゲームオーバー  3秒後リスタート", cvs.width/2, cvs.height/2); //表示内容、位置            
-            setTimeout(reload, 3000);
+            //ctx.fillStyle = "red"; //カラー
+            //ctx.fillText("ゲームオーバー  3秒後リスタート", cvs.width/2, cvs.height/2); //表示内容、位置            
+            setTimeout(3000);
+            location.reload()
             }
             if(pipe[i].x == bX){
                 score++;
