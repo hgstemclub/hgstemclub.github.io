@@ -112,9 +112,9 @@ scroll
     pipeNorth.src = "https://media.discordapp.net/attachments/1021759976030605364/1025741123387396188/pipeNorth.png";
     pipeSouth.src = "https://media.discordapp.net/attachments/1021759976030605364/1025741123714560001/pipeSouth.png";
 
-    var bX = 30;  //鳥の表示値
-    var bY = 20;  //鳥の表示位置
-   var gap = 100;  //ドカンの縦幅
+    var bX = 120;  //鳥の表示値
+    var bY = 80;  //鳥の表示位置
+   var gap = 400;  //ドカンの縦幅
    var constant;
    var score = 0;
 
@@ -128,7 +128,7 @@ scroll
     document.addEventListener("keydown",moveUp);
     function moveUp(e){
         //console.log('キーボード:' + e.type);
-        bY -= 25;
+        bY -= 10;
         //console.log('bY: ' +bY);
     }
     // ボタン操作
@@ -137,7 +137,7 @@ scroll
     //upButton.addEventListener("touchend", touchButton);
     function touchButton(e){
         //console.log('ボタン：' + e.touches, e.type);
-        bY -= 25;
+        bY -= 10;
         //console.log('bY: ' +bY);
     }
 
@@ -158,7 +158,7 @@ scroll
             ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
             pipe[i].x--;
             
-            if( pipe[i].x == 300 ){  //ドカン左端位置が200進んだら（200 = canvas幅:500 - ドカン左端pipe[i].x 300）
+            if( pipe[i].x == 1200 ){  //ドカン左端位置が200進んだら（200 = canvas幅:500 - ドカン左端pipe[i].x 300）
                 pipe.push({
                     x : cvs.width,
                     y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height
