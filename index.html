@@ -160,7 +160,7 @@ scroll
             constant = pipeNorth.height+gap;
             ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
             ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
-            pipe[i].x-=3;
+            pipe[i].x-=2;
             
             if( pipe[i].x == 1200 ){  //ドカン左端位置が200進んだら（200 = canvas幅:500 - ドカン左端pipe[i].x 300）
                 pipe.push({
@@ -183,14 +183,14 @@ scroll
             //return false;
             //ctx.fillStyle = "red"; //カラー
             //ctx.fillText("ゲームオーバー  3秒後リスタート", cvs.width/2, cvs.height/2); //表示内容、位置            
-            setTimeout(3000);
+            setTimeout(3000);765
             location.reload()
             }
             if(pipe[i].x == bX){
                 score++;
             }
         }
-        bY += 1.55;
+        bY += 1.5;
         
         ctx.fillStyle = "#000"; //カラー
         ctx.font = "16px"; //大きさ
