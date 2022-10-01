@@ -185,16 +185,15 @@ scroll
             alert("うわっ、当たっちゃった");
             //return false;
             
-            location.reload();
             }
             if(pipe[i].x == bX){
                 score++;
+                location.reload();
             }
         }
-        bY += 1.7;
+        bY += 1;
         
         ctx.fillStyle = "#000"; //カラー
-        ctx.font-size="large"
         ctx.fillText("点数 : " + score + ' point',10,cvs.height-20); //表示内容、位置
         requestAnimationFrame(draw);
     }
