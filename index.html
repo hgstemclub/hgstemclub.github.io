@@ -163,7 +163,7 @@ scroll
             constant = pipeNorth.height+gap;
             ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
             ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
-            pipe[i].x--;
+            pipe[i].x-=2;
             
             if( pipe[i].x == 1200 ){  //ドカン左端位置が200進んだら（200 = canvas幅:500 - ドカン左端pipe[i].x 300）
                 pipe.push({
@@ -193,7 +193,7 @@ scroll
                
             }
         }
-        bY += 1;
+        bY += 1.5;
         
         ctx.fillStyle = "#000"; //カラー
         ctx.fillText("点数 : " + score + ' point',10,cvs.height-20); //表示内容、位置
