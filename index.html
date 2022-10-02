@@ -126,6 +126,7 @@ scroll
    var gap = 400;  //ドカンの縦幅
    var constant;
    var score = 0;
+  var byup =10;
 
     var pipe = [];
     pipe[0] = {
@@ -137,7 +138,7 @@ scroll
     document.addEventListener("keydown",moveUp);
     function moveUp(e){
         //console.log('キーボード:' + e.type);
-        bY -= 10;
+        bY -= byup;
         //console.log('bY: ' +bY);
      
     }
@@ -147,7 +148,7 @@ scroll
     //upButton.addEventListener("touchend", touchButton);
     function touchButton(e){
         //console.log('ボタン：' + e.touches, e.type);
-        bY -= 10;
+        bY -= byup;
         //console.log('bY: ' 
     }
 
@@ -185,7 +186,7 @@ scroll
             //ゲームオーバーのパターン
             if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
 
-            alert("うわっ、当たっちゃった");
+            alert("脱税失敗..."+score+"年間は脱税できました！でも脱税バレました..");
             //return false;
             
             location.reload();
