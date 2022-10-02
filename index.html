@@ -160,7 +160,7 @@ scroll
             constant = pipeNorth.height+gap;
             ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
             ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
-            pipe[i].x-=3;
+            pipe[i].x-=2;
             
             if( pipe[i].x == 1200 ){  //ドカン左端位置が200進んだら（200 = canvas幅:500 - ドカン左端pipe[i].x 300）
                 pipe.push({
