@@ -137,9 +137,7 @@ scroll
         //console.log('キーボード:' + e.type);
         bY -= 10;
         //console.log('bY: ' +bY);
-        if(bY>=1200){
-          bY=1190
-        }
+     
     }
     // ボタン操作
     var upButton = document.getElementById("upButton");
@@ -148,10 +146,7 @@ scroll
     function touchButton(e){
         //console.log('ボタン：' + e.touches, e.type);
         bY -= 10;
-        //console.log('bY: ' +bY);
-        if(bY>=1200){
-          bY=1190
-        }
+        //console.log('bY: ' 
     }
 
     function reload() {
@@ -197,7 +192,7 @@ scroll
                 score++;
             }
         }
-        bY += 1.7;
+        bY += 1.6;
         
         ctx.fillStyle = "#000"; //カラー
         ctx.font-size="large"
