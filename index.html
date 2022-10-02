@@ -25,6 +25,7 @@ scroll
     body{
         max-width:900px;
         margin:0;
+        padding: 0;
         text-align:center;
     }
     .button {
@@ -115,7 +116,7 @@ scroll
     var pipeNorth = new Image(); //ドカン上
     var pipeSouth = new Image(); //ドカン下
     
-    bg.src = "https://media.discordapp.net/attachments/1021759976030605364/1025741124310138900/bg.png";
+    bg.src = "https://media.discordapp.net/attachments/1021759976030605364/1026062471770935356/bg.png?";
     bird.src = "https://cdn.discordapp.com/attachments/1021759976030605364/1025756046498738216/bird.png";
     fg.src = "https://media.discordapp.net/attachments/1021759976030605364/1025741122879893624/fg.png";
     pipeNorth.src = "https://media.discordapp.net/attachments/1021759976030605364/1025741123387396188/pipeNorth.png";
@@ -156,7 +157,7 @@ scroll
          alert("脱税失敗..."+score+"年間は脱税できました！でも脱税バレました..");
         location.reload();
     }
-
+    
     function draw(){
         ctx.drawImage(bg,0,0);
         ctx.drawImage(bird,bX,bY);
@@ -187,10 +188,10 @@ scroll
             //ゲームオーバーのパターン
             if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
 
-          
+            reload();
             //return false;
-            
-             reload();
+            break;
+             
             }
             if(pipe[i].x == bX){
                 score++;
@@ -199,11 +200,16 @@ scroll
         bY += 1.6;
         
         ctx.fillStyle = "#000"; //カラ
+        ctx.font = "48px serif";
         ctx.fillText("点数 : " + score + ' point',10,cvs.height-20); //表示内容、位置
         requestAnimationFrame(draw);
     }
-
-    draw();
+        draw();
+    
+    function reload() {
+         alert("脱税失敗..."+score+"年間は脱税できました！でも脱税バレました..");
+        location.reload();
+    }
 </script>
 </body>
 </html>
