@@ -13,15 +13,18 @@ scroll
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>Flappy Money</title>
+    <title>Flappy Bird</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <style>
     canvas{
         background-color:#eee;
     }
+    div:not([class]) {
+  display:none;
+  }
     body{
         max-width:900px;
-        margin:20px 30px 0px 30px;
+        margin:0;
         text-align:center;
     }
     .button {
@@ -74,6 +77,9 @@ scroll
         bottom:5px;
         right:5px;
     }
+    .title{
+        font-size: 50px;
+    }
     /*canvasの上にボタンをフロート　おわり*/
     @media (max-width:900px){
         .button {
@@ -84,9 +90,6 @@ scroll
             margin:32px;
         }
     }
-        .title{
-        font-size: 80px;
-        }
     </style>
 </head>
 <body>
@@ -134,6 +137,9 @@ scroll
         //console.log('キーボード:' + e.type);
         bY -= 10;
         //console.log('bY: ' +bY);
+        if(bY>=1200){
+          bY=1190
+        }
     }
     // ボタン操作
     var upButton = document.getElementById("upButton");
@@ -143,6 +149,9 @@ scroll
         //console.log('ボタン：' + e.touches, e.type);
         bY -= 10;
         //console.log('bY: ' +bY);
+        if(bY>=1200){
+          bY=1190
+        }
     }
 
     function reload() {
@@ -179,21 +188,19 @@ scroll
             //ゲームオーバーのパターン
             if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
 
-            alert("脱税失敗、、でも"+ score +"年間は脱税成功したよ" );
+            alert("うわっ、当たっちゃった");
             //return false;
-            //ctx.fillStyle = "red"; //カラー
-            //ctx.fillText("ゲームオーバー  3秒後リスタート", cvs.width/2, cvs.height/2); //表示内容、位置            
-            setTimeout(3000);
+            
+            location.reload();
             }
             if(pipe[i].x == bX){
                 score++;
             }
         }
-        
-        bY += 1.6;
+        bY += 1.7;
         
         ctx.fillStyle = "#000"; //カラー
-        ctx.font = "16px"; //大きさ
+        ctx.font-size="large"
         ctx.fillText("点数 : " + score + ' point',10,cvs.height-20); //表示内容、位置
         requestAnimationFrame(draw);
     }
